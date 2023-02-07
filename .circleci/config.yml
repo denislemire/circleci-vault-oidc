@@ -41,7 +41,7 @@ jobs:
       - run: 
           name: Use secrets retrieved from Vault in a subsequent step
           command: |
-            echo "Username is $SECRET_DEMO_USERNAME, password is $SECRET_DEMO_PASSWORD"
+            echo "Username is $SECRET_USERNAME, password is $SECRET_PASSWORD"
 workflows:
   vault: 
     jobs:
