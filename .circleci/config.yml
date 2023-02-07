@@ -47,5 +47,5 @@ workflows:
     jobs:
       - setup-vault-and-load-secrets:
           context:
-            - circleci-vault-demo
+            - circleci-vault
 # VS Code Extension Version: 1.5.1
