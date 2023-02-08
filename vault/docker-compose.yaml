@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  vault:
+    image: vault:latest
+    environment:
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+    ports:
+      - "8201:8201"
+      - "8200:8200"
+    volumes:
+      - vault-backend:/vault/file
+      - vault-logs:/vault/logs
+      - ./configs:/vault/config
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./plugins:/vault/plugins
+    entrypoint: vault server -config=/vault/config/vault-config.hcl
+
+volumes:
+  vault-backend:
+  vault-logs:
